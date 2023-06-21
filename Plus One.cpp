@@ -31,7 +31,7 @@ public:
     }
 };
 
-// best
+// better
 class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
@@ -47,5 +47,33 @@ public:
    digits.insert(digits.begin(),1);
    return digits;
         
+    }
+};
+
+// best
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) 
+    {
+        int keep = 1;
+        for (auto it = digits.rbegin(); it != digits.rend(); ++it)
+        {
+            *it += keep;
+            if (*it == 10)
+            {
+                *it = 0;
+                keep = 1;
+            }
+            else
+            {
+                keep = 0;
+                break;
+            }
+        }
+        if (keep)
+        {
+            digits.insert(digits.begin(), 1);
+        }
+        return digits;
     }
 };
