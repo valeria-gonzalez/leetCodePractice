@@ -31,11 +31,15 @@ public:
 // Hint 2 (also best)
 class Solution {
 public:
-    void moveZeroes(vector<int>& nums) {
+    void moveZeroes(vector<int>& nums) { 
+        // fast is equivalent to start and slow to end
         int fast = 0, slow = 0;
         for(; fast < nums.size(); fast++){
+            // put all positive numbers at the front, fast also maintains their order
             if(nums[fast]){
                 nums[slow++] = nums[fast];
+                //slow will save the first position from which we need
+                // to fill the array with zeroes, since all zeroes, order is indistinct
             }
         }
         
