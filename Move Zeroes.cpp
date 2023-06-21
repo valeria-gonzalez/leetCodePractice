@@ -28,7 +28,7 @@ public:
     }
 };
 
-// Hint 2 (also best)
+// Hint 2 (also best) O(n)
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) { 
